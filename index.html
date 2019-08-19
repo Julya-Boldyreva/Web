@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>EPAM | Web-Development</title>
+		<link rel="stylesheet" type="text/css" href='CSS/style.css' />
+		<script src="JS/js.js"></script>
+	</head>
+	<body  onload="initiolizeTable();"> <!--УТОЧНИТЬ!!-->
+		<div class="main">	<!--Общий контейнер-->
+			<div class="formUp">
+				<form name="formUp" id="formUp">
+					<div name="formUpLeft" id="formUpLeft">
+						<input type="search" name="fltString" id="fltString" placeholder="Substring filter in the product name" />
+						<input type="button" name="fltButton" id="fltButton" value="Search" onclick="tableSearch();"/>
+					</div>
+					<div name="formUpRight" id="formUpRight">
+						<input type="button" name="addNewButton" id="addNewButton" value="Add New"  onclick="addNew();"/>
+					</div>
+				</form>
+			</div>
+			
+			<table name="tableProduct" id="tableProduct" class="tableProduct">
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>
+							<img src="images/triangleUp.png" name="nameSort" id ="nameSort" class="imgSort" onclick="sortName();">
+						</td>
+						<td>Price</td>
+						<td>
+							<img src="images/triangleUp.png" name="priceSort" id ="priceSort" class="imgSort" onclick="sortPrice();">
+						</td>
+						<td>Actions</td>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+
+			<div class="formDown">
+				<form name="formDown" id="formDown">
+					<span>
+						<p><span name="nameFrame" id="nameFrame">Name</span> <sup>*Required field</sup></p>
+						<input type="text" name="nameProduct" id="nameProduct"/>
+						<p id="nameProductLabel"></p>
+					</span>
+					<span>
+						<p><span name="countFrame" id="countFrame">Count</span></p>
+						<input type="number" name="count" id="count"  min="1"/>
+						<p id="countLabel"></p>
+					</span>
+					<span>
+						<p><span name="priceFrame" id="priceFrame">Price</span></p>
+						<input type="number" name="price" id="price" min="1"/>
+						<p id="priceLabel"></p>
+					</span>
+					<span>
+						<p class="invisible">-</p>
+						<input type="button" name="addUpdateButton" id="addUpdateButton" value="Add" onclick="validationValue();" />
+						<p></p>
+					</span>
+				</form>			
+			</div>
+		</div>
+	</body>
+</html>
